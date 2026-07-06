@@ -1,0 +1,10 @@
+# Large installers / binaries (not part of the website)
+Samples/*.msi
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Node (if a toolchain is added later)
+node_modules/

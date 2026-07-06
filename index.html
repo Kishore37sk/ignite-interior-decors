@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ignite Interior Decors — Interior Design Studio</title>
+  <meta name="description" content="Ignite Interior Decors is a full-service interior design studio crafting warm, modern, and timeless spaces for homes and businesses." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Scroll reading-progress bar (pure CSS scroll timeline) -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Mobile nav toggle state (checkbox hack — no JS) -->
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden />
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Ignite Interior Decors — home">
+        <img src="logo1.png" alt="Ignite Interior Decors" class="brand-logo" />
+      </a>
+
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact" class="nav-cta">Book a Consult</a>
+      </nav>
+
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow hero-eyebrow">Interior Design Studio · Est. 2014</p>
+        <h1 class="hero-title">
+          Spaces that <span class="grad-text">ignite</span><br />
+          the way you live.
+        </h1>
+        <p class="hero-sub">
+          We design warm, modern interiors that balance beauty and function —
+          thoughtfully tailored to how you live, work, and gather.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Start your project</a>
+          <a href="#portfolio" class="btn btn-ghost">View our work</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">450<span class="plus">+</span></span>
+            <span class="stat-label">Spaces designed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">11<span class="plus">yrs</span></span>
+            <span class="stat-label">Of craft</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">98<span class="plus">%</span></span>
+            <span class="stat-label">Happy clients</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to explore">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE STRIP ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Residential</span><span>•</span>
+        <span>Commercial</span><span>•</span>
+        <span>Kitchen &amp; Bath</span><span>•</span>
+        <span>Space Planning</span><span>•</span>
+        <span>Styling</span><span>•</span>
+        <span>3D Visualisation</span><span>•</span>
+        <span>Residential</span><span>•</span>
+        <span>Commercial</span><span>•</span>
+        <span>Kitchen &amp; Bath</span><span>•</span>
+        <span>Space Planning</span><span>•</span>
+        <span>Styling</span><span>•</span>
+        <span>3D Visualisation</span><span>•</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+               alt="A softly lit living room with layered natural textures" loading="lazy" />
+          <div class="about-badge">
+            <span class="about-badge-num">A+</span>
+            <span class="about-badge-text">Award-winning<br />design team</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <p class="eyebrow">Who we are</p>
+          <h2 class="section-title">
+            A studio built on light, warmth, and considered detail.
+          </h2>
+          <p class="lead">
+            At Ignite Interior Decors, we believe a well-designed room does more
+            than look good — it changes how a space feels the moment you walk in.
+          </p>
+          <p>
+            Our designers blend natural materials, bold-yet-calming palettes, and
+            smart spatial planning to create interiors that are equal parts
+            liveable and unforgettable. From a single room refresh to a full home
+            or commercial fit-out, we guide every project with clarity and care.
+          </p>
+
+          <ul class="about-list">
+            <li>Personalised concepts, never templated</li>
+            <li>Transparent budgets and timelines</li>
+            <li>Trusted network of makers &amp; suppliers</li>
+          </ul>
+
+          <a href="#services" class="btn btn-dark">Explore our services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">What we do</p>
+            <h2 class="section-title">Services shaped around your space.</h2>
+          </div>
+          <p class="section-head-note reveal">
+            End-to-end interior design — from first sketch to final styling.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-icon">◈</span>
+            <h3>Residential Design</h3>
+            <p>Full-home interiors that feel personal, comfortable, and quietly luxurious.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon">▦</span>
+            <h3>Commercial Spaces</h3>
+            <p>Offices, cafés, and retail that reflect your brand and delight your guests.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon">❖</span>
+            <h3>Kitchen &amp; Bath</h3>
+            <p>Hard-working, beautiful rooms engineered down to the last millimetre.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon">⌗</span>
+            <h3>Space Planning</h3>
+            <p>Smart layouts that unlock flow, storage, and natural light in every corner.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon">✦</span>
+            <h3>Styling &amp; Décor</h3>
+            <p>The finishing layer — art, textiles, and objects that make a house a home.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-icon">◳</span>
+            <h3>3D Visualisation</h3>
+            <p>Photoreal renders so you can walk your space before a single wall moves.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PORTFOLIO (interactive filter — no JS) ============ -->
+    <section class="portfolio section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Selected work</p>
+            <h2 class="section-title">Portfolio.</h2>
+          </div>
+          <p class="section-head-note reveal">
+            A glimpse of spaces we've reimagined. Filter by type below.
+          </p>
+        </div>
+
+        <!-- radio inputs drive the filter via :checked ~ selectors -->
+        <input type="radio" name="filter" id="f-all" class="filter-input" checked hidden />
+        <input type="radio" name="filter" id="f-living" class="filter-input" hidden />
+        <input type="radio" name="filter" id="f-kitchen" class="filter-input" hidden />
+        <input type="radio" name="filter" id="f-work" class="filter-input" hidden />
+
+        <div class="filter-bar reveal">
+          <label for="f-all">All</label>
+          <label for="f-living">Living</label>
+          <label for="f-kitchen">Kitchen &amp; Bath</label>
+          <label for="f-work">Commercial</label>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery-item living reveal" data-cat="Living Room">
+            <img src="https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=800&q=80" alt="Warm minimalist living room" loading="lazy" />
+            <figcaption><span>Nordic Calm</span><small>Living Room</small></figcaption>
+          </figure>
+          <figure class="gallery-item kitchen reveal" data-cat="Kitchen">
+            <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=800&q=80" alt="Modern kitchen with island" loading="lazy" />
+            <figcaption><span> Member's Kitchen</span><small>Kitchen</small></figcaption>
+          </figure>
+          <figure class="gallery-item work reveal" data-cat="Commercial">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Bright modern office space" loading="lazy" />
+            <figcaption><span>Studio HQ</span><small>Commercial</small></figcaption>
+          </figure>
+          <figure class="gallery-item living reveal" data-cat="Bedroom">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Serene bedroom with natural tones" loading="lazy" />
+            <figcaption><span>Quiet Retreat</span><small>Bedroom</small></figcaption>
+          </figure>
+          <figure class="gallery-item work reveal" data-cat="Café">
+            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Cosy café interior" loading="lazy" />
+            <figcaption><span>Fern &amp; Oak Café</span><small>Commercial</small></figcaption>
+          </figure>
+          <figure class="gallery-item kitchen reveal" data-cat="Bathroom">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Spa-like bathroom" loading="lazy" />
+            <figcaption><span>Spa Ensuite</span><small>Bath</small></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process section" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">How it works</p>
+            <h2 class="section-title">A calm, four-step process.</h2>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">01</span>
+            <h3>Discover</h3>
+            <p>We listen — to your lifestyle, taste, and goals — then walk the space together.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">02</span>
+            <h3>Design</h3>
+            <p>Concepts, mood boards, and 3D renders bring the vision to life before we build.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">03</span>
+            <h3>Deliver</h3>
+            <p>We manage trades, sourcing, and timelines so the build stays smooth and on-budget.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">04</span>
+            <h3>Reveal</h3>
+            <p>The finishing styling layer goes in — and we hand over a space that feels like you.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials section" id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Kind words</p>
+            <h2 class="section-title">Loved by the people we design for.</h2>
+          </div>
+          <p class="section-head-note reveal">Swipe to read more →</p>
+        </div>
+
+        <div class="testimonial-track">
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Ignite transformed our dated flat into the calm, light-filled home we always pictured. Every detail felt intentional."</p>
+            <footer><strong>Priya &amp; Arun</strong><span>Full home · Bengaluru</span></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>"They redesigned our café and footfall genuinely went up. Guests keep asking who did the interiors."</p>
+            <footer><strong>Meera K.</strong><span>Fern &amp; Oak Café</span></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Professional, warm, and on budget. The 3D renders meant zero surprises on the final result."</p>
+            <footer><strong>Daniel R.</strong><span>Kitchen renovation</span></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <p>"Our office finally feels like a place the team wants to be. Thoughtful, functional, beautiful."</p>
+            <footer><strong>Sana M.</strong><span>Studio HQ fit-out</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ (native details accordion) ============ -->
+    <section class="faq section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal">
+          <p class="eyebrow">Good to know</p>
+          <h2 class="section-title">Frequently asked.</h2>
+          <p>Can't find your answer? <a href="#contact">Get in touch</a> — we're happy to help.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <details>
+            <summary>How much does a project cost?</summary>
+            <p>Every space is different, so we scope each project individually. After a free consultation we'll share a clear, itemised proposal — no hidden fees.</p>
+          </details>
+          <details>
+            <summary>How long does a typical design take?</summary>
+            <p>A single room refresh can take 4–6 weeks; a full home or commercial fit-out usually runs 3–6 months, depending on scope and construction.</p>
+          </details>
+          <details>
+            <summary>Do you only take on large projects?</summary>
+            <p>Not at all. From styling a single living room to a whole-building fit-out, we tailor our involvement to what you need.</p>
+          </details>
+          <details>
+            <summary>Can we use our own furniture?</summary>
+            <p>Absolutely. We love blending cherished pieces with new finds to create interiors that feel authentically yours.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-banner reveal">
+      <div class="container cta-inner">
+        <h2>Ready to ignite your space?</h2>
+        <p>Book a free 30-minute consultation and let's talk about what's possible.</p>
+        <a href="#contact" class="btn btn-light">Book a consultation</a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <p class="eyebrow">Let's talk</p>
+          <h2 class="section-title">Tell us about your project.</h2>
+          <p class="lead">We'd love to hear what you're dreaming up. Drop us a note and we'll be in touch within one business day.</p>
+
+          <ul class="contact-details">
+            <li><span class="ci-label">Studio</span> 12 Palm Grove, Bengaluru 560001</li>
+            <li><span class="ci-label">Email</span> <a href="mailto:hello@igniteinteriors.com">hello@igniteinteriors.com</a></li>
+            <li><span class="ci-label">Phone</span> <a href="tel:+919000000000">+91 90000 00000</a></li>
+            <li><span class="ci-label">Hours</span> Mon–Sat · 9:30am – 6:30pm</li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" action="#" method="post">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="Optional" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="type">Project type</label>
+            <select id="type" name="type">
+              <option>Residential</option>
+              <option>Commercial</option>
+              <option>Kitchen &amp; Bath</option>
+              <option>Styling &amp; Décor</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell us a little about your space…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-wordmark">ignite<em>interior decors</em></span>
+        <p>Designing warm, modern interiors that feel unmistakably yours.</p>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+      </nav>
+      <nav class="footer-col" aria-label="Connect">
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">LinkedIn</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <p>12 Palm Grove,<br />Bengaluru 560001</p>
+        <a href="mailto:hello@igniteinteriors.com">hello@igniteinteriors.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Ignite Interior Decors. All rights reserved.</span>
+      <span>Crafted with care.</span>
+    </div>
+  </footer>
+
+  <!-- Mobile menu overlay (part of checkbox-hack menu) -->
+  <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+
+</body>
+</html>
