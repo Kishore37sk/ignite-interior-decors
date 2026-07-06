@@ -780,6 +780,15 @@ p { color: var(--ink-soft); }
   flex-wrap: wrap;
   gap: 8px;
 }
+.footer-credit a {
+  font-weight: 600;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: opacity .25s var(--ease);
+}
+.footer-credit a:hover { opacity: .75; text-decoration: underline; text-underline-offset: 3px; }
 
 /* =========================================================
    SCROLL REVEAL (JS-driven; hidden only when JS is active)
