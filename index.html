@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,13 @@
 </head>
 <body>
 
-  <!-- Scroll reading-progress bar (pure CSS scroll timeline) -->
+  <!-- Preloader -->
+  <div class="preloader" aria-hidden="true">
+    <span class="preloader-mark">ignite</span>
+    <span class="preloader-bar"></span>
+  </div>
+
+  <!-- Scroll reading-progress bar -->
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- Mobile nav toggle state (checkbox hack — no JS) -->
@@ -67,15 +73,15 @@
 
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-num">450<span class="plus">+</span></span>
+            <span class="stat-num"><span class="count" data-count="450">0</span><span class="plus">+</span></span>
             <span class="stat-label">Spaces designed</span>
           </div>
           <div class="stat">
-            <span class="stat-num">11<span class="plus">yrs</span></span>
+            <span class="stat-num"><span class="count" data-count="11">0</span><span class="plus">yrs</span></span>
             <span class="stat-label">Of craft</span>
           </div>
           <div class="stat">
-            <span class="stat-num">98<span class="plus">%</span></span>
+            <span class="stat-num"><span class="count" data-count="98">0</span><span class="plus">%</span></span>
             <span class="stat-label">Happy clients</span>
           </div>
         </div>
@@ -289,7 +295,10 @@
             <p class="eyebrow">Kind words</p>
             <h2 class="section-title">Loved by the people we design for.</h2>
           </div>
-          <p class="section-head-note reveal">Swipe to read more →</p>
+          <div class="carousel-controls reveal">
+            <button type="button" class="carousel-btn prev" aria-label="Previous testimonial">‹</button>
+            <button type="button" class="carousel-btn next" aria-label="Next testimonial">›</button>
+          </div>
         </div>
 
         <div class="testimonial-track">
@@ -443,5 +452,9 @@
   <!-- Mobile menu overlay (part of checkbox-hack menu) -->
   <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
 
+  <!-- Back to top -->
+  <button type="button" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
