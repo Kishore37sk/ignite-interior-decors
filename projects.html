@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Ignite Interior Decors</title>
+  <meta name="description" content="Selected interior design projects by Ignite Interior Decors — homes, villas, and workspaces." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden />
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Ignite Interior Decors — home">
+        <img src="logo1.png" alt="Ignite Interior Decors" class="brand-logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact" class="nav-cta">Contact Now</a>
+      </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Projects</p>
+        <h1>Our Featured work</h1>
+        <p>A collection of thoughtfully designed interiors — each project reflecting modern aesthetics, functionality, and comfort for everyday living. Hover a project to preview, click to explore.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="project-list" id="projectList" data-page="projects-listing">
+          <!-- Project rows injected from projects-data.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container cta-inner">
+        <span class="eyebrow">Design Your Space with Purpose</span>
+        <h2>Have a project in mind?</h2>
+        <a href="index.html#contact" class="btn btn-light">Let's Talk <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating cursor-follow preview -->
+  <div class="hover-preview" id="hoverPreview" aria-hidden="true"><img src="" alt="" /></div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-wordmark">ignite<em>interior decors</em></span>
+        <p>Designing warm, modern interiors that feel unmistakably yours.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="X">X</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="LinkedIn">In</a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <nav class="footer-col" aria-label="Connect">
+        <h4>Connect</h4>
+        <a href="index.html#contact">Contact</a>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">LinkedIn</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <p>12 Palm Grove,<br />Bengaluru 560001</p>
+        <a href="mailto:hi@igniteinteriors.com">hi@igniteinteriors.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Ignite Interior Decors. All rights reserved.</span>
+      <span class="footer-credit">Developed by
+        <a href="https://kishore37sk.github.io/personal_website/" target="_blank" rel="noopener noreferrer">Kishore Kumar</a>
+      </span>
+    </div>
+  </footer>
+
+  <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+  <button type="button" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="projects-data.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

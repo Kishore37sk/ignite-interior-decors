@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Ignite Interior Decors</title>
+  <meta name="description" content="Project case study by Ignite Interior Decors." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden />
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Ignite Interior Decors — home">
+        <img src="logo1.png" alt="Ignite Interior Decors" class="brand-logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact" class="nav-cta">Contact Now</a>
+      </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- Populated by script.js from projects-data.js using ?p=<slug> -->
+  <main id="projectRoot" data-page="project-detail">
+
+    <section class="detail-hero">
+      <div class="container">
+        <div class="detail-top">
+          <div>
+            <p class="detail-breadcrumb"><a href="index.html">Home</a> / <a href="projects.html">Projects</a> / <span id="crumbTitle">Project</span></p>
+            <h1 class="detail-title" id="pTitle">Project</h1>
+          </div>
+          <p class="detail-tagline" id="pTagline"></p>
+        </div>
+        <div class="detail-cover">
+          <img id="pCover" src="" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-body">
+      <div class="container detail-columns">
+        <dl class="detail-meta" id="pMeta"><!-- meta rows --></dl>
+        <div class="detail-copy">
+          <span class="eyebrow">Overview</span>
+          <h2 id="pIntro"></h2>
+          <div id="pBody"></div>
+          <div class="detail-gallery" id="pGallery"><!-- gallery images --></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-next">
+      <div class="container">
+        <span class="eyebrow">Next project</span>
+        <br />
+        <a id="pNext" href="#"><span id="pNextTitle"></span> <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-wordmark">ignite<em>interior decors</em></span>
+        <p>Designing warm, modern interiors that feel unmistakably yours.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">Fb</a>
+          <a href="#" aria-label="X">X</a>
+          <a href="#" aria-label="Instagram">Ig</a>
+          <a href="#" aria-label="LinkedIn">In</a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Explore">
+        <h4>Explore</h4>
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+      <nav class="footer-col" aria-label="Connect">
+        <h4>Connect</h4>
+        <a href="index.html#contact">Contact</a>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">LinkedIn</a>
+      </nav>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <p>12 Palm Grove,<br />Bengaluru 560001</p>
+        <a href="mailto:hi@igniteinteriors.com">hi@igniteinteriors.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 Ignite Interior Decors. All rights reserved.</span>
+      <span class="footer-credit">Developed by
+        <a href="https://kishore37sk.github.io/personal_website/" target="_blank" rel="noopener noreferrer">Kishore Kumar</a>
+      </span>
+    </div>
+  </footer>
+
+  <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+  <button type="button" class="to-top" aria-label="Back to top">↑</button>
+
+  <script src="projects-data.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
