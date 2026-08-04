@@ -1,0 +1,14 @@
+{
+  "name": "Ignite Interior Decors",
+  "short_name": "Ignite",
+  "description": "Interior design studio in Coimbatore — living rooms, kitchens, bedrooms, home theatres and commercial interiors.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f2",
+  "theme_color": "#12a37a",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

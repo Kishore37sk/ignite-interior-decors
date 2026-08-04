@@ -1,6 +1,17 @@
 # Large installers / binaries (not part of the website)
 Samples/*.msi
 
+# Personal documents that are not part of this project.
+# Anything committed here would stay in git history permanently.
+Samples/*.pdf
+
+# Raw client photography (~82 MB of source PNGs).
+# The optimised, web-ready output in assets/ IS committed, so the site
+# builds and deploys from a clean clone. Keep this folder backed up
+# separately — it is the input to tools/build_gallery.py.
+# Remove this line if you would rather version the originals too.
+ignite web site/
+
 # OS / editor cruft
 Thumbs.db
 .DS_Store
