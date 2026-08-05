@@ -78,6 +78,21 @@ Requires Pillow: `pip install Pillow`
 
 ---
 
+## Typography
+
+The site uses **Poppins** (Google Fonts) for every text element — weights
+300–800, loaded once per page from a single `<link>`.
+
+All three font tokens in `styles.css` (`--font-display`, `--font-body`,
+`--font-hero`) resolve to Poppins; they are kept separate so each rule
+still states its intent, and they differ only in weight and tracking.
+Headings are uppercase and bold to match the reference site.
+
+> Form controls (`button`, `input`, `select`, `textarea`) do **not**
+> inherit `font-family` — browsers force their own default. A reset rule
+> near the top of `styles.css` handles this; without it the contact-form
+> submit button falls back to Arial.
+
 ## Brand icons
 
 The full wordmark is unreadable at 16 px, so the tab icon uses the mark's
