@@ -339,7 +339,9 @@ p { color: var(--ink-soft); }
   display: grid;
   grid-template-columns: 1.02fr .98fr;
   gap: clamp(28px, 4vw, 56px);
-  align-items: start;
+  /* stretch (not start) so the stat grid matches the height of the
+     copy + image column — otherwise it leaves dead space beside the image */
+  align-items: stretch;
 }
 .about-left { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); }
 .about-text .section-title { margin: 14px 0 26px; max-width: 18ch; }
@@ -382,6 +384,7 @@ p { color: var(--ink-soft); }
 .counters {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr;   /* split the stretched height evenly */
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
@@ -1099,7 +1102,8 @@ address { font-style: normal; }
   .cat-grid, .cat-grid.is-hub { grid-template-columns: repeat(2, 1fr); }
   .masonry { grid-template-columns: repeat(2, 1fr); }
   .service-grid { grid-template-columns: 1fr 1fr; }
-  .counters { grid-template-columns: 1fr 1fr; }
+  /* stacked layout — the stat grid no longer needs to match a sibling's height */
+  .counters { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .about-media { max-width: 520px; }
   .process-step { grid-template-columns: 70px 1fr; }
@@ -1140,6 +1144,8 @@ address { font-style: normal; }
 
 @media (max-width: 640px) {
   .service-grid, .counters, .footer-grid, .field-row { grid-template-columns: 1fr; }
+  /* single column, so drop the 2-row template from the desktop layout */
+  .counters { grid-template-rows: auto; }
   .cat-grid, .cat-grid.is-hub, .masonry { grid-template-columns: 1fr; }
   .section-head { flex-direction: column; align-items: flex-start; }
   .process-step { grid-template-columns: 1fr; gap: 6px; }
