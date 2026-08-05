@@ -1111,6 +1111,13 @@ address { font-style: normal; }
 }
 
 @media (max-width: 720px) {
+  /* The drawer is a fixed-position child of the header, so the header must
+     not create a containing block for it — backdrop-filter does exactly
+     that, which collapsed the menu to the header's own height. Drop the
+     blur here and use a near-opaque background instead. */
+  .site-header { backdrop-filter: none; background: rgba(246, 244, 236, .96); }
+  .site-header.scrolled { background: var(--cream); }
+
   .nav-burger {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
     width: 44px; height: 44px; cursor: pointer; z-index: 120;
@@ -1129,7 +1136,11 @@ address { font-style: normal; }
   }
   .main-nav a { font-size: 1.25rem; font-family: var(--font-display); font-weight: 600; }
   .nav-toggle-input:checked ~ .site-header .main-nav { transform: translateX(0); visibility: visible; }
-  .nav-toggle-input:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: rgba(12,18,10,.45); z-index: 105; }
+  /* The header is a z-index:100 stacking context, so the drawer's own
+     z-index is scoped inside it. The scrim therefore has to sit BELOW
+     100 — at 105 it painted over the whole header and swallowed every
+     tap meant for a menu link. */
+  .nav-toggle-input:checked ~ .nav-scrim { display: block; position: fixed; inset: 0; background: rgba(12,18,10,.45); z-index: 95; }
   .nav-toggle-input:checked ~ .site-header .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle-input:checked ~ .site-header .nav-burger span:nth-child(2) { opacity: 0; }
   .nav-toggle-input:checked ~ .site-header .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
