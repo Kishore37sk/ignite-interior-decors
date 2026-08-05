@@ -661,9 +661,9 @@ address { font-style: normal; }
   display: grid; place-items: center;
   border: 1px solid rgba(255,255,255,.15);
   color: rgba(246,244,236,.8);
-  font-size: .85rem; font-weight: 600;
-  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
 }
+.footer-social a svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 .footer-social a:hover { background: var(--grad); color: #08130d; transform: translateY(-3px); border-color: transparent; }
 .footer-col h4 { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green-1); margin-bottom: 16px; }
 .footer-col a, .footer-col p { display: block; color: rgba(246,244,236,.7); margin-bottom: 10px; transition: color .25s var(--ease); }
