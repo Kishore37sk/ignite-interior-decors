@@ -98,7 +98,12 @@ CATEGORIES = [
 ]
 
 # Root-level banner images used for the homepage hero carousel.
-HERO_SOURCES = ["BANNER1.png", "BANNER 2.png", "BANNER3.png", "BANNER4.png", "BANNER5.png"]
+# BANNER3 and BANNER5 are intentionally excluded (client request).
+HERO_SOURCES = ["BANNER1.png", "BANNER 2.png", "BANNER4.png"]
+
+# Decorative one-off images: source filename -> output path.
+# BANNER5 is reused as the faded texture behind the dark footer.
+DECOR_SOURCES = {"BANNER5.png": "assets/decor/footer-bg.webp"}
 
 
 # --------------------------------------------------------------------------
@@ -130,9 +135,25 @@ def save_webp(im, path, quality):
 
 
 def fresh_dir(path):
-    if os.path.isdir(path):
-        shutil.rmtree(path)
-    os.makedirs(path, exist_ok=True)
+    """Clear previously generated images, keeping the directories.
+
+    Deliberately avoids shutil.rmtree: this project lives inside a
+    OneDrive folder, and the sync client (or antivirus) can hold a
+    handle on a directory long enough that rmdir fails with
+    PermissionError even when every file inside was removed. Only the
+    .webp files this script produces are deleted, so a locked directory
+    can never break the build.
+    """
+    if not os.path.isdir(path):
+        os.makedirs(path, exist_ok=True)
+        return
+    for root, _dirs, files in os.walk(path):
+        for name in files:
+            if name.lower().endswith(".webp"):
+                try:
+                    os.remove(os.path.join(root, name))
+                except OSError as exc:
+                    print("  ! could not remove %s (%s)" % (name, exc))
 
 
 # --------------------------------------------------------------------------
@@ -222,6 +243,20 @@ def build():
         out_bytes += save_webp(fit(im, HERO_MAX), os.path.join(ROOT, rel), FULL_Q)
         heroes.append(rel)
     print("  %-13s %2d images" % ("Hero", len(heroes)))
+
+    # ---- decorative one-offs (footer texture) ----
+    decor = 0
+    for name, rel in DECOR_SOURCES.items():
+        src_path = os.path.join(SOURCE, name)
+        if not os.path.isfile(src_path):
+            print("  ! missing decor image, skipped: %s" % name)
+            continue
+        src_bytes += os.path.getsize(src_path)
+        out_path = os.path.join(ROOT, rel)
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        out_bytes += save_webp(fit(load_rgb(src_path), HERO_MAX), out_path, FULL_Q)
+        decor += 1
+    print("  %-13s %2d images" % ("Decor", decor))
 
     write_data(categories, heroes)
 

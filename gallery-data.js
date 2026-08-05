@@ -12,9 +12,7 @@ window.IGNITE_GALLERY = {
   "hero": [
     "assets/hero/hero-1.webp",
     "assets/hero/hero-2.webp",
-    "assets/hero/hero-3.webp",
-    "assets/hero/hero-4.webp",
-    "assets/hero/hero-5.webp"
+    "assets/hero/hero-3.webp"
   ],
   "categories": [
     {

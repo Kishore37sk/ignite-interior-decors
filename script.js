@@ -57,19 +57,15 @@
     return `
       <a class="cat-card reveal" href="category.html?c=${encodeURIComponent(cat.slug)}"
          aria-label="${esc(cat.name)} — view ${cat.count} photos">
-        <div class="cat-media">
+        <span class="cat-rail" aria-hidden="true">
+          <span class="cat-rail-name">${esc(cat.name)}</span>
+          <span class="cat-rail-count">${cat.count} photos</span>
+        </span>
+        <span class="cat-media">
           ${layers}
-          <span class="cat-count">${cat.count} photos</span>
           <span class="cat-ticks" aria-hidden="true">${ticks}</span>
           <span class="cat-open" aria-hidden="true">↗</span>
-        </div>
-        <div class="cat-body">
-          <div>
-            <h3>${esc(cat.name)}</h3>
-            <p>${esc(cat.blurb)}</p>
-          </div>
-          <span class="cat-go">View →</span>
-        </div>
+        </span>
       </a>`;
   }
 
