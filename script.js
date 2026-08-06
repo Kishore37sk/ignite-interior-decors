@@ -314,17 +314,33 @@
      Staggered scroll reveal
      ======================================================= */
   (function reveals() {
+    // Wrap every content image in a reveal frame so the photo un-zooms
+    // behind a wipe as it scrolls in, then opt those frames into the
+    // same visibility pass as everything else.
+    // Category cards are deliberately excluded — they already run their
+    // own crossfade, and a second effect on top just muddies it.
+    if (!reduceMotion) {
+      $$(".about-media img, .why-media img, .process-card .step-thumb")
+        .forEach((el) => {
+          const frame = document.createElement("span");
+          frame.className = "img-reveal reveal";
+          frame.style.display = "block";
+          el.parentNode.insertBefore(frame, el);
+          frame.appendChild(el);
+        });
+    }
+
     let items = $$(".reveal");
     if (!items.length) return;
     if (reduceMotion) { items.forEach((el) => el.classList.add("is-visible")); return; }
 
     items.forEach((el) => {
       const sibs = Array.from(el.parentElement.children).filter((c) => c.classList.contains("reveal"));
-      el.style.transitionDelay = Math.min(sibs.indexOf(el), 6) * 80 + "ms";
+      el.style.transitionDelay = Math.min(sibs.indexOf(el), 6) * 90 + "ms";
     });
 
     const check = () => {
-      const trigger = window.innerHeight * 0.88;
+      const trigger = window.innerHeight * 0.9;
       items = items.filter((el) => {
         if (el.getBoundingClientRect().top < trigger) { el.classList.add("is-visible"); return false; }
         return true;
@@ -332,6 +348,75 @@
     };
     onScroll(check);
     check();
+  })();
+
+  /* =======================================================
+     Scroll-linked parallax
+
+     Only transforms are touched, so the browser keeps these on the
+     compositor and never re-lays out the page. Speed is per-element
+     via data-speed; positive drifts up as you scroll down.
+     ======================================================= */
+  (function parallax() {
+    if (reduceMotion || !window.matchMedia("(pointer:fine)").matches) return;
+
+    // Only the large feature images. Anything already carrying its own
+    // motion (category crossfade, card hover) is left alone.
+    const targets = [
+      [".about-media img", 0.07],
+      [".why-media img", 0.08]
+    ].flatMap(([sel, speed]) =>
+      $$(sel).map((el) => ({ el, speed, current: 0, target: 0 })));
+
+    if (!targets.length) return;
+    targets.forEach((t) => t.el.classList.add("parallax"));
+
+    const measure = () => {
+      const vh = window.innerHeight;
+      targets.forEach((t) => {
+        const r = t.el.getBoundingClientRect();
+        if (r.bottom < -200 || r.top > vh + 200) return;   // offscreen: skip
+        // -1 .. 1 across the viewport, 0 when centred
+        const progress = (r.top + r.height / 2 - vh / 2) / vh;
+        t.target = -progress * t.speed * vh;
+      });
+    };
+
+    let raf = null;
+    const render = () => {
+      let moving = false;
+      targets.forEach((t) => {
+        t.current += (t.target - t.current) * 0.09;      // ease toward target
+        if (Math.abs(t.target - t.current) > 0.08) moving = true;
+        // `translate`, not `transform` — leaves the reveal's `scale` intact
+        t.el.style.translate = "0 " + t.current.toFixed(2) + "px";
+      });
+      raf = moving ? requestAnimationFrame(render) : null;
+    };
+    const kick = () => { measure(); if (!raf) raf = requestAnimationFrame(render); };
+
+    onScroll(kick);
+    window.addEventListener("resize", kick);
+    kick();
+  })();
+
+  /* =======================================================
+     Headline reveal — each line rises out of its own mask
+     ======================================================= */
+  (function lineReveal() {
+    const heads = $$(".hero-title, .process-headline");
+    if (!heads.length || reduceMotion) return;
+    heads.forEach((h) => {
+      // Split on the author's <br>, so wrapping stays under our control.
+      const lines = h.innerHTML.split(/<br\s*\/?>/i);
+      h.innerHTML = lines
+        .map((line) => '<span class="line-reveal"><span>' + line + "</span></span>")
+        .join("<br />");
+      $$(".line-reveal", h).forEach((l, i) => {
+        l.querySelector("span").style.transitionDelay = 120 + i * 130 + "ms";
+        requestAnimationFrame(() => l.classList.add("is-visible"));
+      });
+    });
   })();
 
   /* =======================================================

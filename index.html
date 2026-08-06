@@ -18,7 +18,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home">
 
   <div class="preloader" aria-hidden="true">
     <span class="preloader-mark">ignite</span>
@@ -63,10 +63,6 @@
       <div class="container hero-inner">
         <div class="hero-top">
           <h1 class="hero-title">Mood Begins <span class="accent">at Home</span></h1>
-          <ul class="hero-services">
-            <li><span class="num">1.</span>Interior Styling</li>
-            <li><span class="num">2.</span>Space Planning</li>
-          </ul>
         </div>
 
         <div class="hero-bottom">
@@ -146,43 +142,51 @@
       </div>
     </section>
 
-    <!-- ============ DESIGN PROCESS ============ -->
+    <!-- ============ DESIGN PROCESS (staggered cards) ============ -->
     <section class="process section" id="process">
       <div class="container">
-        <div class="section-head">
-          <div class="reveal">
+        <div class="process-mosaic">
+          <!-- Oversized title panel, like the reference -->
+          <div class="process-intro reveal">
             <span class="eyebrow">How we work</span>
-            <h2 class="section-title section-head-title">Our Design Process</h2>
+            <h2 class="process-headline">Our<br />Design</h2>
+            <p>Five calm, considered steps from the first conversation to the final styling.</p>
           </div>
-          <p class="section-head-note reveal">Five calm, considered steps from first conversation to final styling.</p>
-        </div>
 
-        <div class="process-list">
-          <div class="process-step reveal">
-            <span class="step-num">01</span>
-            <div><h3 class="step-title">Discovery</h3><p class="step-desc">We start by understanding your style, needs, and vision.</p></div>
-            <img class="step-thumb" src="assets/gallery/living-room/living-room-02-thumb.webp" alt="" loading="lazy" />
-          </div>
-          <div class="process-step reveal">
-            <span class="step-num">02</span>
-            <div><h3 class="step-title">Concept Design</h3><p class="step-desc">Our team creates mood boards and design ideas that set the direction.</p></div>
-            <img class="step-thumb" src="assets/gallery/bedroom/bedroom-02-thumb.webp" alt="" loading="lazy" />
-          </div>
-          <div class="process-step reveal">
-            <span class="step-num">03</span>
-            <div><h3 class="step-title">Planning</h3><p class="step-desc">Every detail is refined — from layout to materials and finishes.</p></div>
-            <img class="step-thumb" src="assets/gallery/kitchen/kitchen-01-thumb.webp" alt="" loading="lazy" />
-          </div>
-          <div class="process-step reveal">
-            <span class="step-num">04</span>
-            <div><h3 class="step-title">Execution</h3><p class="step-desc">We bring the design to life with precision, care, and expert craftsmanship.</p></div>
-            <img class="step-thumb" src="assets/gallery/commercial/commercial-01-thumb.webp" alt="" loading="lazy" />
-          </div>
-          <div class="process-step reveal">
-            <span class="step-num">05</span>
-            <div><h3 class="step-title">Final Touch</h3><p class="step-desc">A complete review and styling ensure your space feels truly finished.</p></div>
-            <img class="step-thumb" src="assets/gallery/home-theatre/home-theatre-01-thumb.webp" alt="" loading="lazy" />
-          </div>
+          <article class="process-card reveal" style="--i:0">
+            <span class="step-tag">Step 01</span>
+            <h3 class="step-title">Discovery</h3>
+            <p class="step-desc">We start by understanding your style, needs, and vision.</p>
+            <img class="step-thumb" src="assets/gallery/living-room/living-room-02-thumb.webp" alt="Discovery — an Ignite living room project" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="process-card reveal" style="--i:1">
+            <span class="step-tag">Step 02</span>
+            <h3 class="step-title">Concept Design</h3>
+            <p class="step-desc">Our team creates mood boards and design ideas that set the direction.</p>
+            <img class="step-thumb" src="assets/gallery/bedroom/bedroom-02-thumb.webp" alt="Concept design — an Ignite bedroom project" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="process-card reveal" style="--i:2">
+            <span class="step-tag">Step 03</span>
+            <h3 class="step-title">Planning</h3>
+            <p class="step-desc">Every detail is refined — from layout to materials and finishes.</p>
+            <img class="step-thumb" src="assets/gallery/kitchen/kitchen-01-thumb.webp" alt="Planning — an Ignite kitchen project" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="process-card reveal" style="--i:3">
+            <span class="step-tag">Step 04</span>
+            <h3 class="step-title">Execution</h3>
+            <p class="step-desc">We bring the design to life with precision, care, and expert craftsmanship.</p>
+            <img class="step-thumb" src="assets/gallery/commercial/commercial-01-thumb.webp" alt="Execution — an Ignite commercial project" loading="lazy" decoding="async" />
+          </article>
+
+          <article class="process-card reveal" style="--i:4">
+            <span class="step-tag">Step 05</span>
+            <h3 class="step-title">Final Touch</h3>
+            <p class="step-desc">A complete review and styling ensure your space feels truly finished.</p>
+            <img class="step-thumb" src="assets/gallery/home-theatre/home-theatre-01-thumb.webp" alt="Final touch — an Ignite home theatre project" loading="lazy" decoding="async" />
+          </article>
         </div>
       </div>
     </section>
@@ -281,32 +285,48 @@
             <div class="stars">★★★★★</div>
             <q>Ignite transformed our flat into the calm, light-filled home we always pictured. Every detail felt intentional.</q>
             <footer>
-              <span class="avatar" aria-hidden="true">EM</span>
-              <div><strong>Ethan Miller</strong><span>Decorator</span></div>
+              <span class="avatar" aria-hidden="true">KV</span>
+              <div><strong>Karthik Vetrivel</strong><span>Coimbatore</span></div>
             </footer>
           </blockquote>
           <blockquote class="testimonial reveal">
             <div class="stars">★★★★★</div>
-            <q>They redesigned our café and footfall genuinely went up. Guests keep asking who did the interiors.</q>
+            <q>They redesigned our showroom and footfall genuinely went up. Customers keep asking who did the interiors.</q>
             <footer>
-              <span class="avatar" aria-hidden="true">JA</span>
-              <div><strong>Jashon</strong><span>Professor</span></div>
+              <span class="avatar" aria-hidden="true">MS</span>
+              <div><strong>Meenakshi Sundaram</strong><span>Tiruppur</span></div>
             </footer>
           </blockquote>
           <blockquote class="testimonial reveal">
             <div class="stars">★★★★★</div>
             <q>Professional, warm, and on budget. The 3D renders meant zero surprises on the final result.</q>
             <footer>
-              <span class="avatar" aria-hidden="true">NM</span>
-              <div><strong>Noah Mike</strong><span>Assistant</span></div>
+              <span class="avatar" aria-hidden="true">AR</span>
+              <div><strong>Anitha Rajendran</strong><span>Bangalore</span></div>
             </footer>
           </blockquote>
           <blockquote class="testimonial reveal">
             <div class="stars">★★★★★</div>
             <q>Our office finally feels like a place the team wants to be. Thoughtful, functional, beautiful.</q>
             <footer>
-              <span class="avatar" aria-hidden="true">AH</span>
-              <div><strong>Ali Hamja</strong><span>Editor</span></div>
+              <span class="avatar" aria-hidden="true">SM</span>
+              <div><strong>Senthil Murugan</strong><span>Coimbatore</span></div>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <q>The modular kitchen is a joy to cook in. Every inch was planned around how we actually use the space.</q>
+            <footer>
+              <span class="avatar" aria-hidden="true">LK</span>
+              <div><strong>Lakshmi Kannan</strong><span>Tiruppur</span></div>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <div class="stars">★★★★★</div>
+            <q>They handled our home theatre end to end — acoustics, seating, lighting. It feels like a proper cinema.</q>
+            <footer>
+              <span class="avatar" aria-hidden="true">DP</span>
+              <div><strong>Dhanasekaran Palani</strong><span>Bangalore</span></div>
             </footer>
           </blockquote>
         </div>
