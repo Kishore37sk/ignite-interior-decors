@@ -238,62 +238,6 @@ window.IGNITE_GALLERY = {
       ]
     },
     {
-      "slug": "home-theatre",
-      "name": "Home Theatre",
-      "blurb": "Acoustically considered media rooms built for immersive movie nights.",
-      "description": "A proper home theatre is equal parts acoustics and atmosphere. We treat the surfaces, conceal the equipment, and tune the seating and lighting so the room disappears the moment the film starts.",
-      "count": 5,
-      "cover": "assets/gallery/home-theatre/home-theatre-01-full.webp",
-      "coverThumb": "assets/gallery/home-theatre/home-theatre-01-thumb.webp",
-      "images": [
-        {
-          "id": "home-theatre-01",
-          "full": "assets/gallery/home-theatre/home-theatre-01-full.webp",
-          "thumb": "assets/gallery/home-theatre/home-theatre-01-thumb.webp",
-          "w": 1600,
-          "h": 900,
-          "orientation": "landscape",
-          "alt": "Home Theatre interior design by Ignite Interior Decors — view 1"
-        },
-        {
-          "id": "home-theatre-02",
-          "full": "assets/gallery/home-theatre/home-theatre-02-full.webp",
-          "thumb": "assets/gallery/home-theatre/home-theatre-02-thumb.webp",
-          "w": 1448,
-          "h": 1086,
-          "orientation": "landscape",
-          "alt": "Home Theatre interior design by Ignite Interior Decors — view 2"
-        },
-        {
-          "id": "home-theatre-03",
-          "full": "assets/gallery/home-theatre/home-theatre-03-full.webp",
-          "thumb": "assets/gallery/home-theatre/home-theatre-03-thumb.webp",
-          "w": 1448,
-          "h": 1086,
-          "orientation": "landscape",
-          "alt": "Home Theatre interior design by Ignite Interior Decors — view 3"
-        },
-        {
-          "id": "home-theatre-04",
-          "full": "assets/gallery/home-theatre/home-theatre-04-full.webp",
-          "thumb": "assets/gallery/home-theatre/home-theatre-04-thumb.webp",
-          "w": 1600,
-          "h": 900,
-          "orientation": "landscape",
-          "alt": "Home Theatre interior design by Ignite Interior Decors — view 4"
-        },
-        {
-          "id": "home-theatre-05",
-          "full": "assets/gallery/home-theatre/home-theatre-05-full.webp",
-          "thumb": "assets/gallery/home-theatre/home-theatre-05-thumb.webp",
-          "w": 1086,
-          "h": 1448,
-          "orientation": "portrait",
-          "alt": "Home Theatre interior design by Ignite Interior Decors — view 5"
-        }
-      ]
-    },
-    {
       "slug": "commercial",
       "name": "Commercial",
       "blurb": "Offices, showrooms and retail that put your brand to work.",
@@ -373,6 +317,62 @@ window.IGNITE_GALLERY = {
           "h": 860,
           "orientation": "landscape",
           "alt": "Commercial interior design by Ignite Interior Decors — view 8"
+        }
+      ]
+    },
+    {
+      "slug": "home-theatre",
+      "name": "Home Theatre",
+      "blurb": "Acoustically considered media rooms built for immersive movie nights.",
+      "description": "A proper home theatre is equal parts acoustics and atmosphere. We treat the surfaces, conceal the equipment, and tune the seating and lighting so the room disappears the moment the film starts.",
+      "count": 5,
+      "cover": "assets/gallery/home-theatre/home-theatre-01-full.webp",
+      "coverThumb": "assets/gallery/home-theatre/home-theatre-01-thumb.webp",
+      "images": [
+        {
+          "id": "home-theatre-01",
+          "full": "assets/gallery/home-theatre/home-theatre-01-full.webp",
+          "thumb": "assets/gallery/home-theatre/home-theatre-01-thumb.webp",
+          "w": 1600,
+          "h": 900,
+          "orientation": "landscape",
+          "alt": "Home Theatre interior design by Ignite Interior Decors — view 1"
+        },
+        {
+          "id": "home-theatre-02",
+          "full": "assets/gallery/home-theatre/home-theatre-02-full.webp",
+          "thumb": "assets/gallery/home-theatre/home-theatre-02-thumb.webp",
+          "w": 1448,
+          "h": 1086,
+          "orientation": "landscape",
+          "alt": "Home Theatre interior design by Ignite Interior Decors — view 2"
+        },
+        {
+          "id": "home-theatre-03",
+          "full": "assets/gallery/home-theatre/home-theatre-03-full.webp",
+          "thumb": "assets/gallery/home-theatre/home-theatre-03-thumb.webp",
+          "w": 1448,
+          "h": 1086,
+          "orientation": "landscape",
+          "alt": "Home Theatre interior design by Ignite Interior Decors — view 3"
+        },
+        {
+          "id": "home-theatre-04",
+          "full": "assets/gallery/home-theatre/home-theatre-04-full.webp",
+          "thumb": "assets/gallery/home-theatre/home-theatre-04-thumb.webp",
+          "w": 1600,
+          "h": 900,
+          "orientation": "landscape",
+          "alt": "Home Theatre interior design by Ignite Interior Decors — view 4"
+        },
+        {
+          "id": "home-theatre-05",
+          "full": "assets/gallery/home-theatre/home-theatre-05-full.webp",
+          "thumb": "assets/gallery/home-theatre/home-theatre-05-thumb.webp",
+          "w": 1086,
+          "h": 1448,
+          "orientation": "portrait",
+          "alt": "Home Theatre interior design by Ignite Interior Decors — view 5"
         }
       ]
     }

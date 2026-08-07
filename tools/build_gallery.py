@@ -74,17 +74,6 @@ CATEGORIES = [
         ),
     },
     {
-        "folder": "HOME THE",
-        "slug": "home-theatre",
-        "name": "Home Theatre",
-        "blurb": "Acoustically considered media rooms built for immersive movie nights.",
-        "description": (
-            "A proper home theatre is equal parts acoustics and atmosphere. We treat "
-            "the surfaces, conceal the equipment, and tune the seating and lighting so "
-            "the room disappears the moment the film starts."
-        ),
-    },
-    {
         "folder": "COMMERCIAL",
         "slug": "commercial",
         "name": "Commercial",
@@ -95,6 +84,18 @@ CATEGORIES = [
             "still hold up beautifully years into daily use."
         ),
     },
+    # Home Theatre sits last (client request).
+    {
+        "folder": "HOME THE",
+        "slug": "home-theatre",
+        "name": "Home Theatre",
+        "blurb": "Acoustically considered media rooms built for immersive movie nights.",
+        "description": (
+            "A proper home theatre is equal parts acoustics and atmosphere. We treat "
+            "the surfaces, conceal the equipment, and tune the seating and lighting so "
+            "the room disappears the moment the film starts."
+        ),
+    },
 ]
 
 # Root-level banner images used for the homepage hero carousel.
@@ -103,7 +104,10 @@ HERO_SOURCES = ["BANNER1.png", "BANNER 2.png", "BANNER4.png"]
 
 # Decorative one-off images: source filename -> output path.
 # BANNER5 is reused as the faded texture behind the dark footer.
-DECOR_SOURCES = {"BANNER5.png": "assets/decor/footer-bg.webp"}
+DECOR_SOURCES = {
+    "BANNER5.png": "assets/decor/footer-bg.webp",
+    "Image.jpeg": "assets/decor/why-choose-us.webp",
+}
 
 
 # --------------------------------------------------------------------------

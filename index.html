@@ -137,8 +137,12 @@
           </div>
         </div>
 
-        <!-- Category cards injected here from gallery-data.js -->
-        <div class="cat-grid" id="featuredGrid"></div>
+        <!-- Single-row carousel; cards injected from gallery-data.js -->
+        <div class="cat-carousel">
+          <button type="button" class="cat-arrow prev" id="catPrev" aria-label="Previous categories">‹</button>
+          <div class="cat-grid" id="featuredGrid"></div>
+          <button type="button" class="cat-arrow next" id="catNext" aria-label="Next categories">›</button>
+        </div>
       </div>
     </section>
 
@@ -157,35 +161,35 @@
             <span class="step-tag">Step 01</span>
             <h3 class="step-title">Discovery</h3>
             <p class="step-desc">We start by understanding your style, needs, and vision.</p>
-            <img class="step-thumb" src="assets/gallery/living-room/living-room-02-thumb.webp" alt="Discovery — an Ignite living room project" loading="lazy" decoding="async" />
+            <img class="step-thumb" src="assets/process/step-1-discovery.webp" alt="Discovery stage" loading="lazy" decoding="async" />
           </article>
 
           <article class="process-card reveal" style="--i:1">
             <span class="step-tag">Step 02</span>
             <h3 class="step-title">Concept Design</h3>
             <p class="step-desc">Our team creates mood boards and design ideas that set the direction.</p>
-            <img class="step-thumb" src="assets/gallery/bedroom/bedroom-02-thumb.webp" alt="Concept design — an Ignite bedroom project" loading="lazy" decoding="async" />
+            <img class="step-thumb" src="assets/process/step-2-concept.webp" alt="Concept design stage" loading="lazy" decoding="async" />
           </article>
 
           <article class="process-card reveal" style="--i:2">
             <span class="step-tag">Step 03</span>
             <h3 class="step-title">Planning</h3>
             <p class="step-desc">Every detail is refined — from layout to materials and finishes.</p>
-            <img class="step-thumb" src="assets/gallery/kitchen/kitchen-01-thumb.webp" alt="Planning — an Ignite kitchen project" loading="lazy" decoding="async" />
+            <img class="step-thumb" src="assets/process/step-3-planning.webp" alt="Planning stage" loading="lazy" decoding="async" />
           </article>
 
           <article class="process-card reveal" style="--i:3">
             <span class="step-tag">Step 04</span>
             <h3 class="step-title">Execution</h3>
             <p class="step-desc">We bring the design to life with precision, care, and expert craftsmanship.</p>
-            <img class="step-thumb" src="assets/gallery/commercial/commercial-01-thumb.webp" alt="Execution — an Ignite commercial project" loading="lazy" decoding="async" />
+            <img class="step-thumb" src="assets/process/step-4-execution.webp" alt="Execution stage" loading="lazy" decoding="async" />
           </article>
 
           <article class="process-card reveal" style="--i:4">
             <span class="step-tag">Step 05</span>
             <h3 class="step-title">Final Touch</h3>
             <p class="step-desc">A complete review and styling ensure your space feels truly finished.</p>
-            <img class="step-thumb" src="assets/gallery/home-theatre/home-theatre-01-thumb.webp" alt="Final touch — an Ignite home theatre project" loading="lazy" decoding="async" />
+            <img class="step-thumb" src="assets/process/step-5-final-touch.webp" alt="Final touch stage" loading="lazy" decoding="async" />
           </article>
         </div>
       </div>
@@ -252,7 +256,7 @@
     <section class="why section" id="why">
       <div class="container why-grid">
         <div class="why-media reveal">
-          <img src="assets/gallery/bedroom/bedroom-03-full.webp" alt="Bedroom detail from an Ignite Interior Decors project" loading="lazy" decoding="async" />
+          <img src="assets/decor/why-choose-us.webp" alt="A living room designed by Ignite Interior Decors" loading="lazy" decoding="async" />
         </div>
         <div class="reveal">
           <span class="eyebrow">Why choose us</span>
@@ -347,6 +351,7 @@
               </address>
             </li>
             <li><span class="ci-label">Email</span> <a href="mailto:hi@igniteinteriordecor.com">hi@igniteinteriordecor.com</a></li>
+            <li><span class="ci-label">WhatsApp</span> <a href="https://wa.me/919489289494?text=Hi%20Ignite%20Interior%20Decors" target="_blank" rel="noopener noreferrer">+91 94892 89494</a></li>
             <li><span class="ci-label">Hours</span> Mon–Sat · 9:30am – 6:30pm</li>
             <li><span class="ci-label">Follow</span>
               <span class="contact-social">
@@ -444,6 +449,12 @@
   </footer>
 
   <label for="nav-toggle" class="nav-scrim" aria-hidden="true"></label>
+  <!-- Opens WhatsApp with the message pre-filled -->
+  <a class="wa-float" href="https://wa.me/919489289494?text=Hi%20Ignite%20Interior%20Decors"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Chat with Ignite Interior Decors on WhatsApp" title="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.07 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.04 21.5h-.01c-1.77 0-3.51-.48-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.89 9.9-9.89 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88M20.52 3.45A11.76 11.76 0 0 0 12.04 0C5.5 0 .18 5.32.18 11.86c0 2.09.55 4.13 1.59 5.93L.08 24l6.34-1.66a11.83 11.83 0 0 0 5.62 1.43h.01c6.54 0 11.86-5.32 11.86-11.86 0-3.17-1.23-6.15-3.47-8.39"/></svg>
+  </a>
   <button type="button" class="to-top" aria-label="Back to top">↑</button>
 
   <script src="gallery-data.js"></script>

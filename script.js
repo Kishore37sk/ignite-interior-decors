@@ -76,6 +76,43 @@
       grid.innerHTML = CATS.map(catCardHTML).join("");
     });
     if (targets.length) startCrossfade();
+    initCatCarousel();
+  }
+
+  /* Homepage featured row: arrow controls for the horizontal scroller. */
+  function initCatCarousel() {
+    const track = $("#featuredGrid");
+    const prev = $("#catPrev");
+    const next = $("#catNext");
+    if (!track || !prev || !next) return;
+
+    const step = () => {
+      const card = track.querySelector(".cat-card");
+      if (!card) return track.clientWidth;
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+      return card.offsetWidth + gap;
+    };
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth - 2;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max;
+    };
+
+    const behavior = reduceMotion ? "auto" : "smooth";
+    // sync() also runs after the scroll settles, so the enabled/disabled
+    // state is correct even if the scroll event is missed.
+    const go = (dir) => {
+      track.scrollBy({ left: dir * step(), behavior });
+      setTimeout(sync, 500);
+    };
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+    // Re-sync once images have sized the cards, so the arrows start correct.
+    window.addEventListener("load", sync);
+    setTimeout(sync, 300);
   }
 
   // Cycle the stacked photos inside every category card.

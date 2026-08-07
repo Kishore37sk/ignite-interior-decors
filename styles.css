@@ -396,12 +396,16 @@ p { color: var(--ink-soft); }
   display: grid;
   grid-template-columns: 1.02fr .98fr;
   gap: clamp(28px, 4vw, 56px);
-  /* stretch (not start) so the stat grid matches the height of the
-     copy + image column — otherwise it leaves dead space beside the image */
+  /* Stretch, matching the reference: the stat grid runs the full height
+     of the copy + image column so nothing is left hanging beside the
+     image. The air this creates is absorbed by bottom-anchoring the
+     content inside each cell (see .counter below). */
   align-items: stretch;
 }
 .about-left { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 44px); }
-.about-text .section-title { margin: 14px 0 26px; max-width: 18ch; }
+/* No narrow cap — the reference lets this run the full width of its
+   column, setting in 3 wide lines rather than 5 cramped ones. */
+.about-text .section-title { margin: 14px 0 26px; }
 .about-actions {
   display: flex;
   align-items: center;
@@ -448,13 +452,16 @@ p { color: var(--ink-soft); }
   border-radius: var(--radius);
   overflow: hidden;
 }
+/* Content is anchored to the BOTTOM of each cell, as on the reference.
+   Centring it in a tall stretched cell is what made the whitespace look
+   accidental rather than designed. */
 .counter {
   background: var(--card);
-  padding: clamp(24px, 3.2vw, 40px) clamp(18px, 2.4vw, 30px);
+  padding: clamp(28px, 3.2vw, 40px);
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   transition: background .4s var(--ease);
 }
 .counter:nth-child(2), .counter:nth-child(3) { background: var(--cream-2); }
@@ -482,7 +489,10 @@ p { color: var(--ink-soft); }
 .section-head {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  /* start, not flex-end: the right column (blurb + button) is taller
+     than the heading, so bottom-aligning pushed the heading down and
+     opened a gap above it. */
+  align-items: flex-start;
   gap: 26px;
   margin-bottom: 54px;
   flex-wrap: wrap;
@@ -554,14 +564,17 @@ p { color: var(--ink-soft); }
 }
 .process-intro p { color: rgba(246, 244, 236, .6); max-width: 32ch; }
 
+/* No card chrome, matching the reference: the step sits directly on the
+   dark background. Order is label -> image -> title -> copy, which is
+   set with flex `order` so the markup stays semantic. */
 .process-card {
   grid-column: span 4;
-  background: rgba(255, 255, 255, .035);
-  border: 1px solid rgba(255, 255, 255, .09);
-  border-radius: var(--radius);
-  padding: 26px 24px 24px;
-  transition: transform .45s var(--ease), background .45s var(--ease),
-              border-color .45s var(--ease), box-shadow .45s var(--ease);
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform .45s var(--ease);
 }
 /* Offsets that give the block its scattered rhythm. */
 .process-card:nth-child(3) { margin-top: 46px; }
@@ -569,43 +582,74 @@ p { color: var(--ink-soft); }
 .process-card:nth-child(5) { margin-top: 30px; }
 .process-card:nth-child(6) { margin-top: -10px; }
 
-.process-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, .06);
-  border-color: rgba(158, 216, 79, .35);
-  box-shadow: 0 26px 50px -30px rgba(0, 0, 0, .9);
-}
+.process-card:hover { transform: translateY(-6px); }
 
+/* Small dot + label, not a filled pill */
 .step-tag {
-  display: inline-block;
-  font-size: .72rem;
-  letter-spacing: .16em;
+  order: -2;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  align-self: flex-start;
+  font-size: .74rem;
+  letter-spacing: .14em;
   text-transform: uppercase;
   font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: rgba(158, 216, 79, .14);
   color: var(--green-1);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+}
+.step-tag::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--green-1);
+  flex: none;
 }
 .process-card .step-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.35rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: .01em;
+  text-transform: uppercase;
   color: var(--cream);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.process-card .step-desc { color: rgba(246, 244, 236, .62); font-size: .94rem; }
+.process-card .step-desc { color: rgba(246, 244, 236, .62); font-size: .92rem; max-width: 34ch; }
+
+/* script.js wraps content images in an .img-reveal frame, so THAT is the
+   flex child here — the order has to live on the wrapper, not the <img>,
+   or the image drops to the bottom of the card. */
+.process-card > .img-reveal { order: -1; margin: 0 0 18px; border-radius: 10px; }
+.process-card > .img-reveal .step-thumb { margin: 0; border-radius: 10px; }
+
+/* Wide, short banner above the title. 4:1 matches the source images'
+   own proportion, so they are framed rather than cropped at the sides. */
 .process-card .step-thumb {
+  order: -1;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 1;
   object-fit: cover;
-  border-radius: 14px;
-  margin-top: 20px;
-  filter: saturate(.9);
+  border-radius: 10px;
+  margin: 0 0 18px;
+  filter: saturate(.92);
   transition: filter .5s var(--ease), transform .6s var(--ease);
 }
 .process-card:hover .step-thumb { filter: saturate(1.05); transform: scale(1.02); }
+
+/* Elbow connector from the previous step, as on the reference. Drawn
+   with borders so there's no extra markup or image. */
+.process-card:not(:nth-child(2))::before {
+  content: "";
+  position: absolute;
+  left: -34px; top: -34px;
+  width: 34px; height: 46px;
+  border-left: 1px solid rgba(255, 255, 255, .18);
+  border-bottom: 1px solid rgba(255, 255, 255, .18);
+  border-bottom-left-radius: 10px;
+  pointer-events: none;
+}
+.process-card { position: relative; }
+@media (max-width: 960px) { .process-card::before { display: none; } }
 
 /* =========================================================
    SERVICES
@@ -692,7 +736,9 @@ p { color: var(--ink-soft); }
   align-items: center;
 }
 .why-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.why-media img { aspect-ratio: 4/3.3; object-fit: cover; width: 100%; }
+/* Closer to the source photo's 16:9 so the room isn't cropped to pieces,
+   while staying tall enough to balance the list beside it. */
+.why-media img { aspect-ratio: 16/11; object-fit: cover; width: 100%; }
 .why-list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 4px; }
 .why-list li {
   display: flex; gap: 16px; align-items: flex-start;
@@ -886,24 +932,52 @@ address { font-style: normal; }
    between them — the "seamless fade" browsing effect. Only the
    first image is eager; the rest are lazy and fade in on cycle.
    ========================================================= */
-/* Staggered mosaic rather than a uniform grid: cards sit at different
-   heights and vertical offsets, the way the reference's featured work
-   reads. align-items:start lets each card keep its own height. */
-.cat-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+/* ---- Homepage: one-row carousel with side arrows ---- */
+.cat-carousel { position: relative; }
+.cat-grid:not(.is-hub) {
+  display: flex;
   gap: 24px;
-  align-items: start;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Smoothness is passed per-call from script.js instead of being set
+     here: a blanket scroll-behavior makes every programmatic scroll
+     smooth, which swallows the arrow clicks. */
+  padding-bottom: 6px;
+  scrollbar-width: none;                 /* the arrows are the control */
 }
-.cat-grid.is-hub { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.cat-grid:not(.is-hub)::-webkit-scrollbar { display: none; }
+.cat-grid:not(.is-hub) .cat-card {
+  flex: 0 0 clamp(280px, 30%, 420px);    /* ~3 visible, rest scrolls */
+  scroll-snap-align: start;
+}
 
-/* Offsets are keyed to COLUMN position, not card order, so every row
-   staggers identically and the columns stay aligned with each other.
-   Card heights are left uniform on purpose: mixing aspect ratios in a
-   fixed grid makes each row as tall as its tallest card and punches
-   holes under the shorter ones. */
-.cat-grid:not(.is-hub) .cat-card:nth-child(3n+2) { margin-top: 44px; }
-.cat-grid:not(.is-hub) .cat-card:nth-child(3n)   { margin-top: 22px; }
+.cat-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background .3s var(--ease), color .3s var(--ease),
+              transform .3s var(--ease), opacity .3s var(--ease);
+}
+.cat-arrow.prev { left: -18px; }
+.cat-arrow.next { right: -18px; }
+.cat-arrow:hover { background: var(--grad); color: #08130d; border-color: transparent; }
+.cat-arrow.prev:hover { transform: translateY(-50%) translateX(-3px); }
+.cat-arrow.next:hover { transform: translateY(-50%) translateX(3px); }
+.cat-arrow[disabled] { opacity: .3; pointer-events: none; }
+@media (max-width: 720px) { .cat-arrow { display: none; } }
+
+/* Hub page keeps the two-column grid */
+.cat-grid.is-hub { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; align-items: start; }
 
 /* Card = vertical name rail + image, mirroring the reference's
    featured-work tiles. The rail carries the category name and count. */
@@ -1271,8 +1345,43 @@ address { font-style: normal; }
 @media (prefers-reduced-motion: reduce) { .preloader-mark, .preloader-bar::after { animation: none; } }
 
 /* Back to top */
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+   Always visible; sits below the back-to-top button so the two
+   never overlap. Opens a chat with the message pre-filled.
+   ========================================================= */
+.wa-float {
+  position: fixed; right: 24px; bottom: 24px; z-index: 91;
+  width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #25d366;                 /* WhatsApp brand green */
+  color: #fff;
+  box-shadow: 0 10px 28px -8px rgba(37, 211, 102, .65);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+}
+.wa-float svg { width: 30px; height: 30px; fill: currentColor; display: block; }
+.wa-float:hover { transform: translateY(-4px) scale(1.06); box-shadow: 0 16px 34px -8px rgba(37, 211, 102, .8); }
+
+/* Soft outward ring so it reads as "tap me" without being noisy */
+.wa-float::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: wa-ring 2.6s var(--ease) infinite;
+  pointer-events: none;
+}
+@keyframes wa-ring {
+  0%   { transform: scale(1); opacity: .55; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .wa-float::after { animation: none; opacity: 0; } }
+
+/* Back-to-top stacks above the WhatsApp button. The gap allows for its
+   hidden-state translateY(16px), which would otherwise dip into it. */
 .to-top {
-  position: fixed; right: 24px; bottom: 24px; z-index: 90;
+  position: fixed; right: 28px; bottom: 108px; z-index: 90;
   width: 48px; height: 48px; border: none; border-radius: 50%;
   background: var(--ink); color: var(--cream); font-size: 1.2rem; cursor: pointer;
   opacity: 0; transform: translateY(16px) scale(.9); pointer-events: none;
@@ -1305,10 +1414,21 @@ address { font-style: normal; }
 }
 
 @media (max-width: 720px) {
-  /* backdrop-filter must stay off here: it would make the header a
-     containing block for the fixed drawer inside it, collapsing the
-     menu to header height. */
-  .site-header, .site-header.scrolled { backdrop-filter: none; }
+  /* The drawer is a position:fixed CHILD of the header, so the header
+     must never become a containing block for it — that collapses the
+     menu to header height and spills the links over the page.
+     ANY of these on .site-header will do it, so all are forced off at
+     this breakpoint: transform (incl. the header-drop entrance
+     animation), backdrop-filter, filter, perspective, will-change.
+     Do not remove without moving .main-nav out of the header. */
+  .site-header, .site-header.scrolled {
+    backdrop-filter: none;
+    filter: none;
+    perspective: none;
+    will-change: auto;
+    animation: none;      /* header-drop animates transform */
+    transform: none;
+  }
 
   .nav-burger {
     display: flex; flex-direction: column; justify-content: center; gap: 5px;
